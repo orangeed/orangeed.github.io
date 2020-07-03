@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://orangeed.github.io/"/>
-  <updated>2020-07-03T13:09:20.886Z</updated>
+  <updated>2020-07-03T14:46:09.708Z</updated>
   <id>https://orangeed.github.io/</id>
   
   <author>
@@ -21,21 +21,31 @@
     <link href="https://orangeed.github.io/2020/07/03/first/"/>
     <id>https://orangeed.github.io/2020/07/03/first/</id>
     <published>2020-07-03T11:07:48.875Z</published>
-    <updated>2020-07-03T13:09:20.886Z</updated>
+    <updated>2020-07-03T14:46:09.708Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="图片alt"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src= "/img/loading.gif" data-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="图片alt"></p><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2020/07/03/NjyaGV.jpg&quot; alt=&quot;图片alt&quot;&gt;&lt;/p&gt;
-
+        &lt;p&gt;&lt;img src= &quot;/img/loading.gif&quot; data-src=&quot;https://s1.ax1x.com/2020/07/03/NjyaGV.jpg&quot; alt=&quot;图片alt&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io
       
     
     </summary>
     
     
+      <category term="教程" scheme="https://orangeed.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="装机" scheme="https://orangeed.github.io/categories/%E6%95%99%E7%A8%8B/%E8%A3%85%E6%9C%BA/"/>
+    
+    
+      <category term="组装" scheme="https://orangeed.github.io/tags/%E7%BB%84%E8%A3%85/"/>
+    
+      <category term="DIV" scheme="https://orangeed.github.io/tags/DIV/"/>
+    
+      <category term="电脑" scheme="https://orangeed.github.io/tags/%E7%94%B5%E8%84%91/"/>
     
   </entry>
   
