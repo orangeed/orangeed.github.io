@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="orangecj.cn/"/>
-  <updated>2020-08-23T14:52:29.643Z</updated>
+  <updated>2020-09-28T11:48:38.576Z</updated>
   <id>orangecj.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>npm包 | 我的第一个npm安装包</title>
+    <link href="orangecj.cn/FIRST_NPM/"/>
+    <id>orangecj.cn/FIRST_NPM/</id>
+    <published>2020-08-19T15:35:00.000Z</published>
+    <updated>2020-09-28T11:48:38.576Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src= "/img/loading.gif" data-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><h1 id="我的第一个npm安装包"><a href="#我的第一个npm安装包" class="headerlink" title="我的第一个npm安装包"></a>我的第一个npm安装包</h1><blockquote><p>应公司业务要求，需要制作桌面安装程序。同时也要替代QT，制作QT的安装程序。所以最后我选用了electron制作exe，配合Inno Setup Compiler制作安装包。因为这玩意是我一个人在研究，为了避免我哪天休息不在，还找我打包的情况，我特意写了将这个项目制作成为了一个npm安装包，并附上相应文档，相信还是能看懂的。</p></blockquote><h2 id="1-将自己的函数导出"><a href="#1-将自己的函数导出" class="headerlink" title="1. 将自己的函数导出"></a>1. 将自己的函数导出</h2><p>src/main.js 是我的主要代码文件。</p><p><img src= "/img/loading.gif" data-src="https://s1.ax1x.com/2020/09/28/0VtNZQ.png" alt="代码"></p><p>index.js 是我引用main.js的文件，并导出，也就是整个npm的入口文件了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; require(&#39;.&#x2F;src&#x2F;main&#39;)</span><br></pre></td></tr></table></figure><p>build/index.js 是我使用webpack打包的文件。因为需要将第三方插件的引用打包。避免使用引用错误，这里如果纯自己开发的，不引用第三方插件，不需要打包。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const path &#x3D; require(&#39;path&#39;)</span><br><span class="line">​</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &#39;.&#x2F;index.js&#39;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.join(__dirname, &#39;dist&#39;),</span><br><span class="line">        filename: &#39;bundle.js&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    mode: &#39;development&#39;,</span><br><span class="line">    target: &#39;electron-main&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="3-将package-json的main改为index-js"><a href="#3-将package-json的main改为index-js" class="headerlink" title="3. 将package.json的main改为index.js"></a>3. 将package.json的main改为index.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;mian&quot;: &quot;index.js&quot;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">​&quot;dev1&quot;: &quot;npx webpack --config build&#x2F;index.js&quot;,</span><br><span class="line">&quot;pub&quot;: &quot;npm run dev1 &amp;&amp; npm version patch &amp;&amp; npm publish&quot;,</span><br><span class="line">&quot;minor&quot;: &quot;npm run dev1 &amp;&amp; npm version minor &amp;&amp; npm publish&quot;,</span><br><span class="line">&quot;major&quot;: &quot;npm run dev1 &amp;&amp; npm version major &amp;&amp; npm publish&quot;,</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm run pub 打包 更新补丁  并上传npm包</span><br><span class="line">npm run minor 打包 更新小版本  并上传npm包</span><br><span class="line">npm run major 打包 更新大版本  并上传npm包</span><br></pre></td></tr></table></figure><h2 id="3-使用"><a href="#3-使用" class="headerlink" title="3. 使用"></a>3. 使用</h2><p>首先安装依赖。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i electron-pack</span><br></pre></td></tr></table></figure><p>然后引用。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const pack &#x3D; require(&#39;electron-pack&#39;)</span><br><span class="line">​</span><br><span class="line">const config &#x3D; &#123;</span><br><span class="line">    width: 1280, &#x2F;&#x2F; 窗口的宽度</span><br><span class="line">    minWidth: 1280, &#x2F;&#x2F; 窗口最小宽度</span><br><span class="line">    height: 960, &#x2F;&#x2F; 窗口高度</span><br><span class="line">    minHeight: 960, &#x2F;&#x2F; 窗口最小高度</span><br><span class="line">    frame: true, &#x2F;&#x2F; 是否有边框</span><br><span class="line">    center: true, &#x2F;&#x2F; 窗口是否在中心</span><br><span class="line">    minimizable: true, &#x2F;&#x2F;窗口是否可以最小化</span><br><span class="line">    maximizable: true, &#x2F;&#x2F;窗口是否可以最大化</span><br><span class="line">    url: &#39;https:&#x2F;&#x2F;orangecj.com&#39;, &#x2F;&#x2F; 打包地址</span><br><span class="line">    isWeb: true, &#x2F;&#x2F; 是否是网站</span><br><span class="line">    openDevTools: true, &#x2F;&#x2F; 是否打开开发者工具</span><br><span class="line">&#125;</span><br><span class="line">​</span><br><span class="line">pack(config)</span><br></pre></td></tr></table></figure><p>最后运行大功告成。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src= &quot;/img/loading.gif&quot; data-src=&quot;https://s1.ax1x.com/2020/07/03/NjyaGV.jpg&quot; alt=&quot;logo&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;我的第一个npm安装包&quot;&gt;&lt;a href=&quot;#我的第一个npm
+      
+    
+    </summary>
+    
+    
+      <category term="打包" scheme="orangecj.cn/categories/%E6%89%93%E5%8C%85/"/>
+    
+      <category term="npm" scheme="orangecj.cn/categories/%E6%89%93%E5%8C%85/npm/"/>
+    
+    
+      <category term="electron" scheme="orangecj.cn/tags/electron/"/>
+    
+  </entry>
   
   <entry>
     <title>博客 | 如何快速搭建个人博客</title>
