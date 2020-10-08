@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="orangecj.cn/"/>
-  <updated>2020-09-28T12:51:29.202Z</updated>
+  <updated>2020-10-08T11:35:00.392Z</updated>
   <id>orangecj.cn/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>app | 如何制作一个app</title>
+    <link href="orangecj.cn/app/"/>
+    <id>orangecj.cn/app/</id>
+    <published>2020-10-08T10:00:00.000Z</published>
+    <updated>2020-10-08T11:35:00.392Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src= "/img/loading.gif" data-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><blockquote><p>用了taro后，突然想试试做一个app，先做一个Android的试试，因为我只要Android的手机，调试方便。</p></blockquote><h2 id="创建app项目"><a href="#创建app项目" class="headerlink" title="创建app项目"></a>创建app项目</h2><p>听说HBuilder做app很方便，于是我用了HBuilder。</p><blockquote><p>文件 –&gt; 新建 –&gt; 项目 –&gt; 5+APP(默认模板)</p></blockquote><p>得到一个空的项目，在 <em>manifest.json</em>这个文件中，入口文件默认是index.html。</p><p>图标设置，选择一个png图标。</p><p>启动界面设置，可以自定义启动图，也是png格式的图片。</p><p>其他的可以不用修改，默认就好了。</p><h2 id="写app项目"><a href="#写app项目" class="headerlink" title="写app项目"></a>写app项目</h2><p>先将一个网页打包为app吧。</p><p>在index.html中，加载网页。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onload &#x3D; function() &#123;</span><br><span class="line">    location.href &#x3D; &#39;http:&#x2F;&#x2F;www.orangecj.cn&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>也可以将已经完成的项目打包，将入口文件改为你打包好的入口文件，例如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dist&#x2F;index.html</span><br></pre></td></tr></table></figure><h2 id="运行app"><a href="#运行app" class="headerlink" title="运行app"></a>运行app</h2><p>我们需要真机调试，看看效果如何。</p><p>将自己手机调为开发者模式。</p><p>打开usb调试。</p><p>用usb将电脑和手机连接起来，手机会提示匹配啥的，允许就好了。</p><p>在HBuilder中，点击运行 –&gt; 运行到手机或者模拟器 –&gt; 运行。会在你手机上安装一个HBuilder的调试基座，安装完毕后，就可以看到效果了。如果没有自动安装，可以按照控制台的提示手动安装。</p><h2 id="打包app"><a href="#打包app" class="headerlink" title="打包app"></a>打包app</h2><blockquote><p>发行 –&gt; 原生App-云打包，打包结束后会返回一个打包的apk下载地址。下载apk，安装，就好了。当然你也可以 发行 –&gt; 原生App-查看打包状态，查看历史打包的地址等等。</p></blockquote><h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>第一个是下载的apk。</p><p>第二个是安装好的app。</p><p>第三个是打开以后的效果图。<br><img src= "/img/loading.gif" data-src="https://s1.ax1x.com/2020/10/08/006bG9.jpg" alt="效果图"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src= &quot;/img/loading.gif&quot; data-src=&quot;https://s1.ax1x.com/2020/07/03/NjyaGV.jpg&quot; alt=&quot;logo&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用了taro后，突然想试试做一个app，先做一
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="orangecj.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="app" scheme="orangecj.cn/categories/%E6%95%99%E7%A8%8B/app/"/>
+    
+    
+      <category term="app" scheme="orangecj.cn/tags/app/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>taro | taro使用及结论</title>
+    <link href="orangecj.cn/taro/"/>
+    <id>orangecj.cn/taro/</id>
+    <published>2020-10-08T08:00:00.000Z</published>
+    <updated>2020-10-08T09:32:36.930Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src= "/img/loading.gif" data-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><h1 id="taro使用及结论"><a href="#taro使用及结论" class="headerlink" title="taro使用及结论"></a>taro使用及结论</h1><blockquote><p>前段时间用过一次uniapp，后来发现还有个同类型的<a href="https://taro-docs.jd.com/taro/docs/GETTING-STARTED" target="_blank" rel="noopener">taro</a>，于是体验了一番。</p></blockquote><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @tarojs&#x2F;cli</span><br><span class="line"></span><br><span class="line">yarn global add @tarojs&#x2F;cli</span><br></pre></td></tr></table></figure><h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taro init myApp</span><br></pre></td></tr></table></figure><p>myapp是项目名称。</p><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 微信小程序</span><br><span class="line">&quot;dev:weapp&quot;: &quot;npm run build:weapp -- --watch&quot;, </span><br><span class="line">&quot;dev:swan&quot;: &quot;npm run build:swan -- --watch&quot;,</span><br><span class="line"># 支付宝</span><br><span class="line">&quot;dev:alipay&quot;: &quot;npm run build:alipay -- --watch&quot;,</span><br><span class="line">&quot;dev:tt&quot;: &quot;npm run build:tt -- --watch&quot;,</span><br><span class="line"># 网页</span><br><span class="line">&quot;dev:h5&quot;: &quot;npm run build:h5 -- --watch&quot;,</span><br><span class="line">&quot;dev:rn&quot;: &quot;npm run build:rn -- --watch&quot;,</span><br><span class="line">&quot;dev:qq&quot;: &quot;npm run build:qq -- --watch&quot;,</span><br><span class="line">&quot;dev:jd&quot;: &quot;npm run build:jd -- --watch&quot;,</span><br><span class="line">&quot;dev:quickapp&quot;: &quot;npm run build:quickapp -- --watch&quot;</span><br></pre></td></tr></table></figure><h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&quot;build:weapp&quot;: &quot;taro build --type weapp&quot;,</span><br><span class="line">&quot;build:swan&quot;: &quot;taro build --type swan&quot;,</span><br><span class="line">&quot;build:alipay&quot;: &quot;taro build --type alipay&quot;,</span><br><span class="line">&quot;build:tt&quot;: &quot;taro build --type tt&quot;,</span><br><span class="line">&quot;build:h5&quot;: &quot;taro build --type h5&quot;,</span><br><span class="line">&quot;build:rn&quot;: &quot;taro build --type rn&quot;,</span><br><span class="line">&quot;build:qq&quot;: &quot;taro build --type qq&quot;,</span><br><span class="line">&quot;build:jd&quot;: &quot;taro build --type jd&quot;,</span><br><span class="line">&quot;build:quickapp&quot;: &quot;taro build --type quickapp&quot;,</span><br></pre></td></tr></table></figure><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>1.安装完taro后，报错，告诉我taro没有。</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>1.将taro添加到环境变量中，重新启动就好了。具体如何添加到环境变量中，很简单，找到你安装taro所在文件夹，将 <em>~/@tarojs\cli\bin</em>添加到变量中就行了，~是指你具体的taro所在路径。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src= &quot;/img/loading.gif&quot; data-src=&quot;https://s1.ax1x.com/2020/07/03/NjyaGV.jpg&quot; alt=&quot;logo&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;taro使用及结论&quot;&gt;&lt;a href=&quot;#taro使用及结论&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="orangecj.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="taro" scheme="orangecj.cn/categories/%E6%8A%80%E6%9C%AF/taro/"/>
+    
+    
+      <category term="taro" scheme="orangecj.cn/tags/taro/"/>
+    
+  </entry>
   
   <entry>
     <title>摄像头 | 浏览器调用摄像头并实现截图保存的效果</title>
@@ -51,8 +110,8 @@
     <title>electron-pack | electron-pack爬坑记</title>
     <link href="orangecj.cn/electron-pack-qus/"/>
     <id>orangecj.cn/electron-pack-qus/</id>
-    <published>2020-08-28T12:21:00.000Z</published>
-    <updated>2020-09-28T12:22:51.978Z</updated>
+    <published>2020-09-28T12:21:00.000Z</published>
+    <updated>2020-10-08T07:58:54.515Z</updated>
     
     <content type="html"><![CDATA[<p><img src= "/img/loading.gif" data-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><h1 id="electron-pack-electron-pack爬坑记"><a href="#electron-pack-electron-pack爬坑记" class="headerlink" title="electron-pack | electron-pack爬坑记"></a>electron-pack | electron-pack爬坑记</h1><blockquote><p>electron-pack是我个人开发的一个方便自己使用的npm安装包。他的诞生经历了不少的坎坷。</p></blockquote><h2 id="1-app-requestSingleInstanceLock-is-not-a-function"><a href="#1-app-requestSingleInstanceLock-is-not-a-function" class="headerlink" title="1. app .requestSingleInstanceLock  is not a function"></a>1. app .requestSingleInstanceLock  is not a function</h2><p>目测原因：在require的时候，app为undefined，所以肯定是没有。</p><p>解决方案：对项目进行打包，希望将第三方插件electron引入进来。</p><h2 id="2-Can’t-resolve-‘fs’-in-‘D-packages-npm-node-modules…’"><a href="#2-Can’t-resolve-‘fs’-in-‘D-packages-npm-node-modules…’" class="headerlink" title="2. Can’t resolve ‘fs’ in ‘D:\packages\npm\node_modules…’"></a>2. Can’t resolve ‘fs’ in ‘D:\packages\npm\node_modules…’</h2><p>目测原因：在打包的时候似乎是require的问题，node和webpack都有require，但是是不一样的。(只是我的猜想，别喷)</p><p>解决方案：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node: &#123;</span><br><span class="line">         fs: &#39;empty&#39;,</span><br><span class="line">         net:&#39;empty&#39;,</span><br><span class="line">         tls:&quot;empty&quot;,</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><p>结果：在后续中运行报错： Uncaught TypeError: fs.existsSync is not a function</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">       target:&quot;node&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>结果：在后续运行中报错：Electron failed to install correctly, please delete node_modules/electron and try installing again</p><h2 id="3-解决2的问题"><a href="#3-解决2的问题" class="headerlink" title="3. 解决2的问题"></a>3. 解决2的问题</h2><p>这样看起来问题挺多的，看了第一个问题，似乎还真有人解决过这个问题，但是他缺少一个文件，而我不缺少，所以先排除了这个问题，甚至是这个解决方法都是错的。直接看后面的错误。</p><p>似乎看不出来啥，于是去webpack官网查了下 target 这个参数，里面有很多的参数，悄悄盯了一下，发现很多参数，其中有为electron提供的参数值。改代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    target:&quot;electron-main&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>​结果：顺利运行​</p>]]></content>
     
@@ -82,8 +141,8 @@
     <title>npm包 | 我的第一个npm安装包</title>
     <link href="orangecj.cn/FIRST_NPM/"/>
     <id>orangecj.cn/FIRST_NPM/</id>
-    <published>2020-08-28T12:15:00.000Z</published>
-    <updated>2020-09-28T12:21:44.338Z</updated>
+    <published>2020-09-28T12:15:00.000Z</published>
+    <updated>2020-10-08T07:58:58.477Z</updated>
     
     <content type="html"><![CDATA[<p><img src= "/img/loading.gif" data-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><h1 id="我的第一个npm安装包"><a href="#我的第一个npm安装包" class="headerlink" title="我的第一个npm安装包"></a>我的第一个npm安装包</h1><blockquote><p>应公司业务要求，需要制作桌面安装程序。同时也要替代QT，制作QT的安装程序。所以最后我选用了electron制作exe，配合Inno Setup Compiler制作安装包。因为这玩意是我一个人在研究，为了避免我哪天休息不在，还找我打包的情况，我特意写了将这个项目制作成为了一个npm安装包，并附上相应文档，相信还是能看懂的。</p></blockquote><h2 id="1-将自己的函数导出"><a href="#1-将自己的函数导出" class="headerlink" title="1. 将自己的函数导出"></a>1. 将自己的函数导出</h2><p>src/main.js 是我的主要代码文件。</p><p><img src= "/img/loading.gif" data-src="https://s1.ax1x.com/2020/09/28/0VtNZQ.png" alt="代码"></p><p>index.js 是我引用main.js的文件，并导出，也就是整个npm的入口文件了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; require(&#39;.&#x2F;src&#x2F;main&#39;)</span><br></pre></td></tr></table></figure><p>build/index.js 是我使用webpack打包的文件。因为需要将第三方插件的引用打包。避免使用引用错误，这里如果纯自己开发的，不引用第三方插件，不需要打包。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const path &#x3D; require(&#39;path&#39;)</span><br><span class="line">​</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &#39;.&#x2F;index.js&#39;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.join(__dirname, &#39;dist&#39;),</span><br><span class="line">        filename: &#39;bundle.js&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    mode: &#39;development&#39;,</span><br><span class="line">    target: &#39;electron-main&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="3-将package-json的main改为index-js"><a href="#3-将package-json的main改为index-js" class="headerlink" title="3. 将package.json的main改为index.js"></a>3. 将package.json的main改为index.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;mian&quot;: &quot;index.js&quot;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">​&quot;dev1&quot;: &quot;npx webpack --config build&#x2F;index.js&quot;,</span><br><span class="line">&quot;pub&quot;: &quot;npm run dev1 &amp;&amp; npm version patch &amp;&amp; npm publish&quot;,</span><br><span class="line">&quot;minor&quot;: &quot;npm run dev1 &amp;&amp; npm version minor &amp;&amp; npm publish&quot;,</span><br><span class="line">&quot;major&quot;: &quot;npm run dev1 &amp;&amp; npm version major &amp;&amp; npm publish&quot;,</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm run pub 打包 更新补丁  并上传npm包</span><br><span class="line">npm run minor 打包 更新小版本  并上传npm包</span><br><span class="line">npm run major 打包 更新大版本  并上传npm包</span><br></pre></td></tr></table></figure><h2 id="3-使用"><a href="#3-使用" class="headerlink" title="3. 使用"></a>3. 使用</h2><p>首先安装依赖。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i electron-pack</span><br></pre></td></tr></table></figure><p>然后引用。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const pack &#x3D; require(&#39;electron-pack&#39;)</span><br><span class="line">​</span><br><span class="line">const config &#x3D; &#123;</span><br><span class="line">    width: 1280, &#x2F;&#x2F; 窗口的宽度</span><br><span class="line">    minWidth: 1280, &#x2F;&#x2F; 窗口最小宽度</span><br><span class="line">    height: 960, &#x2F;&#x2F; 窗口高度</span><br><span class="line">    minHeight: 960, &#x2F;&#x2F; 窗口最小高度</span><br><span class="line">    frame: true, &#x2F;&#x2F; 是否有边框</span><br><span class="line">    center: true, &#x2F;&#x2F; 窗口是否在中心</span><br><span class="line">    minimizable: true, &#x2F;&#x2F;窗口是否可以最小化</span><br><span class="line">    maximizable: true, &#x2F;&#x2F;窗口是否可以最大化</span><br><span class="line">    url: &#39;https:&#x2F;&#x2F;orangecj.com&#39;, &#x2F;&#x2F; 打包地址</span><br><span class="line">    isWeb: true, &#x2F;&#x2F; 是否是网站</span><br><span class="line">    openDevTools: true, &#x2F;&#x2F; 是否打开开发者工具</span><br><span class="line">&#125;</span><br><span class="line">​</span><br><span class="line">pack(config)</span><br></pre></td></tr></table></figure><p>最后运行大功告成。</p>]]></content>
     

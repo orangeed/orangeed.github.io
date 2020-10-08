@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>orangecj.cn/video/</loc>
+    <loc>orangecj.cn/app/</loc>
     
-    <lastmod>2020-09-28T12:51:29.202Z</lastmod>
+    <lastmod>2020-10-08T11:35:00.392Z</lastmod>
     
   </url>
   
   <url>
-    <loc>orangecj.cn/electron-pack-qus/</loc>
+    <loc>orangecj.cn/taro/</loc>
     
-    <lastmod>2020-09-28T12:22:51.978Z</lastmod>
+    <lastmod>2020-10-08T09:32:36.930Z</lastmod>
     
   </url>
   
   <url>
     <loc>orangecj.cn/FIRST_NPM/</loc>
     
-    <lastmod>2020-09-28T12:21:44.338Z</lastmod>
+    <lastmod>2020-10-08T07:58:58.477Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>orangecj.cn/electron-pack-qus/</loc>
+    
+    <lastmod>2020-10-08T07:58:54.515Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>orangecj.cn/video/</loc>
+    
+    <lastmod>2020-09-28T12:51:29.202Z</lastmod>
     
   </url>
   
