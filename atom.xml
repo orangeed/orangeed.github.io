@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="orangecj.cn/"/>
-  <updated>2020-10-08T11:35:00.392Z</updated>
+  <updated>2020-10-08T11:38:21.017Z</updated>
   <id>orangecj.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="orangecj.cn/app/"/>
     <id>orangecj.cn/app/</id>
     <published>2020-10-08T10:00:00.000Z</published>
-    <updated>2020-10-08T11:35:00.392Z</updated>
+    <updated>2020-10-08T11:38:21.017Z</updated>
     
     <content type="html"><![CDATA[<p><img src= "/img/loading.gif" data-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><blockquote><p>用了taro后，突然想试试做一个app，先做一个Android的试试，因为我只要Android的手机，调试方便。</p></blockquote><h2 id="创建app项目"><a href="#创建app项目" class="headerlink" title="创建app项目"></a>创建app项目</h2><p>听说HBuilder做app很方便，于是我用了HBuilder。</p><blockquote><p>文件 –&gt; 新建 –&gt; 项目 –&gt; 5+APP(默认模板)</p></blockquote><p>得到一个空的项目，在 <em>manifest.json</em>这个文件中，入口文件默认是index.html。</p><p>图标设置，选择一个png图标。</p><p>启动界面设置，可以自定义启动图，也是png格式的图片。</p><p>其他的可以不用修改，默认就好了。</p><h2 id="写app项目"><a href="#写app项目" class="headerlink" title="写app项目"></a>写app项目</h2><p>先将一个网页打包为app吧。</p><p>在index.html中，加载网页。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onload &#x3D; function() &#123;</span><br><span class="line">    location.href &#x3D; &#39;http:&#x2F;&#x2F;www.orangecj.cn&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>也可以将已经完成的项目打包，将入口文件改为你打包好的入口文件，例如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dist&#x2F;index.html</span><br></pre></td></tr></table></figure><h2 id="运行app"><a href="#运行app" class="headerlink" title="运行app"></a>运行app</h2><p>我们需要真机调试，看看效果如何。</p><p>将自己手机调为开发者模式。</p><p>打开usb调试。</p><p>用usb将电脑和手机连接起来，手机会提示匹配啥的，允许就好了。</p><p>在HBuilder中，点击运行 –&gt; 运行到手机或者模拟器 –&gt; 运行。会在你手机上安装一个HBuilder的调试基座，安装完毕后，就可以看到效果了。如果没有自动安装，可以按照控制台的提示手动安装。</p><h2 id="打包app"><a href="#打包app" class="headerlink" title="打包app"></a>打包app</h2><blockquote><p>发行 –&gt; 原生App-云打包，打包结束后会返回一个打包的apk下载地址。下载apk，安装，就好了。当然你也可以 发行 –&gt; 原生App-查看打包状态，查看历史打包的地址等等。</p></blockquote><h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>第一个是下载的apk。</p><p>第二个是安装好的app。</p><p>第三个是打开以后的效果图。<br><img src= "/img/loading.gif" data-src="https://s1.ax1x.com/2020/10/08/006bG9.jpg" alt="效果图"></p>]]></content>
     
