@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>orangecj.cn/app/</loc>
+    <loc>orangecj.cn/taro/</loc>
     
-    <lastmod>2020-10-08T11:38:21.017Z</lastmod>
+    <lastmod>2020-10-08T11:48:22.158Z</lastmod>
     
   </url>
   
   <url>
-    <loc>orangecj.cn/taro/</loc>
+    <loc>orangecj.cn/video/</loc>
     
-    <lastmod>2020-10-08T09:32:36.930Z</lastmod>
+    <lastmod>2020-10-08T11:48:14.998Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>orangecj.cn/app/</loc>
+    
+    <lastmod>2020-10-08T11:38:21.017Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>orangecj.cn/electron-pack-qus/</loc>
     
     <lastmod>2020-10-08T07:58:54.515Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>orangecj.cn/video/</loc>
-    
-    <lastmod>2020-09-28T12:51:29.202Z</lastmod>
     
   </url>
   
