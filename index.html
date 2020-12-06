@@ -1,102 +1,140 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>橘子的分享 - 橘享</title><meta name="description" content="人生不像做饭，不能等万事俱备了才下锅"><meta name="author" content="橘子orange,1208917130@qq.com"><meta name="copyright" content="橘子orange"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/logo.jpg"><link rel="canonical" href="orangecj.cn/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="橘子的分享"><meta property="og:url" content="orangecj.cn/"><meta property="og:site_name" content="橘子的分享"><meta property="og:description" content="人生不像做饭，不能等万事俱备了才下锅"><meta property="og:image" content="orangecj.cn/img/head.jpg"><meta property="article:published_time" content="2020-11-21T12:47:08.551Z"><meta property="article:modified_time" content="2020-11-21T12:47:08.551Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
-  document.documentElement.setAttribute('data-theme', 'dark')
-  if (document.querySelector('meta[name="theme-color"]') !== null) {
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
-  }
-}
-var activateLightMode = function () {
-  document.documentElement.setAttribute('data-theme', 'light')
-  if (document.querySelector('meta[name="theme-color"]') !== null) {
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
-  }
-}
-
-var getCookies = function (name) {
-  const value = `; ${document.cookie}`
-  const parts = value.split(`; ${name}=`)
-  if (parts.length === 2) return parts.pop().split(';').shift()
-}
-
-var autoChangeMode = 'false'
-var t = getCookies('theme')
-if (autoChangeMode === '1') {
-  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-  if (t === undefined) {
-    if (isLightMode) activateLightMode()
-    else if (isDarkMode) activateDarkMode()
-    else if (isNotSpecified || hasNoSupport) {
-      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
-      var now = new Date()
-      var hour = now.getHours()
-      var isNight = hour <= 6 || hour >= 18
-      isNight ? activateDarkMode() : activateLightMode()
-    }
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-      if (Cookies.get('theme') === undefined) {
-        e.matches ? activateDarkMode() : activateLightMode()
-      }
-    })
-  } else if (t === 'light') activateLightMode()
-  else activateDarkMode()
-} else if (autoChangeMode === '2') {
-  now = new Date()
-  hour = now.getHours()
-  isNight = hour <= 6 || hour >= 18
-  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-  else if (t === 'light') activateLightMode()
-  else activateDarkMode()
-} else {
-  if (t === 'dark') activateDarkMode()
-  else if (t === 'light') activateLightMode()
-}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>橘子的分享 - 橘享</title><meta name="author" content="橘子orange,1208917130@qq.com"><meta name="copyright" content="橘子orange"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="人生不像做饭，不能等万事俱备了才下锅">
+<meta property="og:type" content="website">
+<meta property="og:title" content="橘子的分享">
+<meta property="og:url" content="https://orangecj.cn/index.html">
+<meta property="og:site_name" content="橘子的分享">
+<meta property="og:description" content="人生不像做饭，不能等万事俱备了才下锅">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://orangecj.cn/img/head.jpg">
+<meta property="article:author" content="橘子orange">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://orangecj.cn/img/head.jpg"><link rel="shortcut icon" href="/img/logo.jpg"><link rel="canonical" href="https://orangecj.cn/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
-  localSearch: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
   translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
   copy: {
     success: '复制成功',
     error: '复制错误',
     noSupport: '浏览器不支持'
   },
-  bookmark: {
-    message_prev: '按',
-    message_next: '键将本页加入书签'
+  relativeDate: {
+    homepage: false,
+    post: false
   },
-  runtime_unit: '天',
-  runtime: true,
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
   copyright: undefined,
   ClickShowText: {"text":"I,LOVE,YOU","fontSize":"15px"},
-  medium_zoom: false,
-  fancybox: true,
-  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
   justifiedGallery: {
     js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
     css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
   },
-  baiduPush: false,
-  highlightCopy: true,
-  highlightLang: true,
   isPhotoFigcaption: false,
   islazyload: true,
-  isanchor: false    
-}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
   isPost: false,
   isHome: true,
   isHighlightShrink: false,
-  isSidebar: false
-  }</script><noscript><style>
-#nav {
-  opacity: 1
-}
-.justified-gallery img{
-  opacity: 1
-}
-</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="橘子的分享" type="application/atom+xml">
-</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">10</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">12</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tool/"><i class="fa-fw fa fa-beer"></i><span> 常用网站</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 便签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-sticky-note"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/photos/"><i class="fa-fw far fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><header class="full_page" id="page-header" style="background-image: url(https://s1.ax1x.com/2020/07/04/Nvarv9.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">橘子的分享</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tool/"><i class="fa-fw fa fa-beer"></i><span> 常用网站</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 便签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-sticky-note"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/photos/"><i class="fa-fw far fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">橘子的分享</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/orangeed" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1208917130@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://s1.ax1x.com/2020/07/04/NxncdA.jpg" target="_blank" title="微信公众号_橘子的分享"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://www.zhihu.com/people/bu-qi-64-11" target="_blank" title="知乎_橘子的分享"><i class="fab fa-zhihu"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/update/" title="热更新 | electron热更新">     <img class="post_bg" data-src="https://s3.ax1x.com/2020/11/21/D3PJpt.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="热更新 | electron热更新"></a></div><div class="recent-post-info"><a class="article-title" href="/update/" title="热更新 | electron热更新">热更新 | electron热更新</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-21 20:43:00"><i class="far fa-calendar-alt"></i>2020-11-21</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">
+  isToc: false,
+  postUpdate: '2020-12-06 19:49:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tool/"><i class="fa-fw fa fa-beer"></i><span> 常用网站</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 便签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-sticky-note"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/photos/"><i class="fa-fw far fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书店</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background: url(https://s3.ax1x.com/2020/12/06/DXOh7T.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">橘子的分享</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tool/"><i class="fa-fw fa fa-beer"></i><span> 常用网站</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 便签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-sticky-note"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/photos/"><i class="fa-fw far fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书店</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">橘子的分享</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/orangeed" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1208917130@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://s1.ax1x.com/2020/07/04/NxncdA.jpg" target="_blank" title="微信公众号_橘子的分享"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://www.zhihu.com/people/bu-qi-64-11" target="_blank" title="知乎_橘子的分享"><i class="fab fa-zhihu"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/update/" title="热更新 | electron热更新">     <img class="post_bg" data-lazy-src="https://s3.ax1x.com/2020/11/21/D3PJpt.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="热更新 | electron热更新"></a></div><div class="recent-post-info"><a class="article-title" href="/update/" title="热更新 | electron热更新">热更新 | electron热更新</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-21T12:43:00.000Z" title="发表于 2020-11-21 20:43:00">2020-11-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">
 
 因为公司项目需求，需要做一个检查更新的功能，但是不需要让用户重新安装，只需要替换更新的部分，重启应用完成更新。
 
@@ -112,7 +150,7 @@ if (autoChangeMode === '1') {
 1、听说electron对于app与app.asar的优先度不同，app优先于app.asar，可以借这个方法来实现。但是好像比较绕，那就先放弃了。
 2、似乎可以监听electron的close事件，然后执行程序。不过用了下，用处不大，因为我app.quit()后，进程关闭了。
 3、通过子进程实现。先打开子进程，然后关闭主进程，执行子进程的代码。或者通过子进程调用另外的文件。感觉可行。
-最后的思路重新收 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/app/" title="app | 如何制作一个app">     <img class="post_bg" data-src="https://s1.ax1x.com/2020/10/08/00cKiQ.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="app | 如何制作一个app"></a></div><div class="recent-post-info"><a class="article-title" href="/app/" title="app | 如何制作一个app">app | 如何制作一个app</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-10-08 18:00:00"><i class="far fa-calendar-alt"></i>2020-10-08</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/app/">app</a></span></div><div class="content">
+最后的思路重新收 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/app/" title="app | 如何制作一个app">     <img class="post_bg" data-lazy-src="https://s1.ax1x.com/2020/10/08/00cKiQ.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="app | 如何制作一个app"></a></div><div class="recent-post-info"><a class="article-title" href="/app/" title="app | 如何制作一个app">app | 如何制作一个app</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-08T10:00:00.000Z" title="发表于 2020-10-08 18:00:00">2020-10-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/app/">app</a></span></div><div class="content">
 
 用了taro后，突然想试试做一个app，先做一个Android的试试，因为我只要Android的手机，调试方便。
 
@@ -132,7 +170,7 @@ if (autoChangeMode === '1') {
 1dist&#x2F;index.html
 
 运行app我们需要真机调试，看看效果如何。
-将自己手机调为开发者模式。 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/taro/" title="taro | taro使用及结论">     <img class="post_bg" data-src="https://s1.ax1x.com/2020/10/08/00Qd8s.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="taro | taro使用及结论"></a></div><div class="recent-post-info"><a class="article-title" href="/taro/" title="taro | taro使用及结论">taro | taro使用及结论</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-10-08 16:00:00"><i class="far fa-calendar-alt"></i>2020-10-08</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/taro/">taro</a></span></div><div class="content">
+将自己手机调为开发者模式。 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/taro/" title="taro | taro使用及结论">     <img class="post_bg" data-lazy-src="https://s1.ax1x.com/2020/10/08/00Qd8s.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="taro | taro使用及结论"></a></div><div class="recent-post-info"><a class="article-title" href="/taro/" title="taro | taro使用及结论">taro | taro使用及结论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-08T08:00:00.000Z" title="发表于 2020-10-08 16:00:00">2020-10-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/taro/">taro</a></span></div><div class="content">
 
 前段时间用过一次uniapp，后来发现还有个同类型的taro，于是体验了一番。
 
@@ -140,12 +178,12 @@ if (autoChangeMode === '1') {
 
 初始化项目1taro init myApp
 myapp是项目名称。
-运行123456789101112# 微信小程序&quot;dev:weapp&quot;: &quot;npm run build:weapp -- --watch&quot;, &quot;dev:swan&quot;: &quot;npm run build:swan -- --watch&quot;,# 支付宝&quot;dev:alipay&quot;: &quot;npm run build:alipay -- --watch&quot;,&quot;dev:tt&quot;: &quot;npm run build:tt -- --watch&quot;,# 网页&quot;dev:h5&quot;: &quot;npm run build:h5 -- --watch&quot;,& ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/video/" title="摄像头 | 浏览器调用摄像头并实现截图保存的效果">     <img class="post_bg" data-src="https://s1.ax1x.com/2020/09/28/0VDC3d.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="摄像头 | 浏览器调用摄像头并实现截图保存的效果"></a></div><div class="recent-post-info"><a class="article-title" href="/video/" title="摄像头 | 浏览器调用摄像头并实现截图保存的效果">摄像头 | 浏览器调用摄像头并实现截图保存的效果</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-28 20:47:00"><i class="far fa-calendar-alt"></i>2020-09-28</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/">打包</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/npm/">npm</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/npm/electron-pack/">electron-pack</a></span></div><div class="content">
+运行123456789101112# 微信小程序&quot;dev:weapp&quot;: &quot;npm run build:weapp -- --watch&quot;, &quot;dev:swan&quot;: &quot;npm run build:swan -- --watch&quot;,# 支付宝&quot;dev:alipay&quot;: &quot;npm run build:alipay -- --watch&quot;,&quot;dev:tt&quot;: &quot;npm run build:tt -- --watch&quot;,# 网页&quot;dev:h5&quot;: &quot;npm run build:h5 -- --watch&quot;,& ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/video/" title="摄像头 | 浏览器调用摄像头并实现截图保存的效果">     <img class="post_bg" data-lazy-src="https://s1.ax1x.com/2020/09/28/0VDC3d.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="摄像头 | 浏览器调用摄像头并实现截图保存的效果"></a></div><div class="recent-post-info"><a class="article-title" href="/video/" title="摄像头 | 浏览器调用摄像头并实现截图保存的效果">摄像头 | 浏览器调用摄像头并实现截图保存的效果</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-28T12:47:00.000Z" title="发表于 2020-09-28 20:47:00">2020-09-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/">打包</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/npm/">npm</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/npm/electron-pack/">electron-pack</a></span></div><div class="content">
 
 ​为了在QT上实现打开摄像头，拍照等操作。就写了这个。
 
 1. 写一个vue组件先写一个vue的组件，其内容基本如下：
-123456789&lt;el-button type&#x3D;&quot;primary&quot; @click&#x3D;&quot;openVideo&quot;&gt;打开摄像头&lt;&#x2F;el-button&gt;&lt;el-button @click&#x3D;&quot;closeVideo&quot;&gt;关闭摄像头&lt;&#x2F;el-button&gt;&lt;el-button type&#x3D;&quot;danger&quot; @click&#x3D;&quot;screenshot&quot;&gt;截图&lt;&#x2F;el-button&gt;&lt;div&gt;  &lt;video id&#x3D;&quot;video&quot; ref&#x3D;&quot;video&quot; &#x2F;&gt;&lt;&#x2F;div&gt;&lt;canvas ref&#x3D;&quot;canva ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/electron-pack-qus/" title="electron-pack | electron-pack爬坑记">     <img class="post_bg" data-src="https://s1.ax1x.com/2020/09/28/0Va5zq.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="electron-pack | electron-pack爬坑记"></a></div><div class="recent-post-info"><a class="article-title" href="/electron-pack-qus/" title="electron-pack | electron-pack爬坑记">electron-pack | electron-pack爬坑记</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-28 20:21:00"><i class="far fa-calendar-alt"></i>2020-09-28</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/">打包</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/npm/">npm</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/npm/electron-pack/">electron-pack</a></span></div><div class="content">
+123456789&lt;el-button type&#x3D;&quot;primary&quot; @click&#x3D;&quot;openVideo&quot;&gt;打开摄像头&lt;&#x2F;el-button&gt;&lt;el-button @click&#x3D;&quot;closeVideo&quot;&gt;关闭摄像头&lt;&#x2F;el-button&gt;&lt;el-button type&#x3D;&quot;danger&quot; @click&#x3D;&quot;screenshot&quot;&gt;截图&lt;&#x2F;el-button&gt;&lt;div&gt;  &lt;video id&#x3D;&quot;video&quot; ref&#x3D;&quot;video&quot; &#x2F;&gt;&lt;&#x2F;div&gt;&lt;canvas ref&#x3D;&quot;canva ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/electron-pack-qus/" title="electron-pack | electron-pack爬坑记">     <img class="post_bg" data-lazy-src="https://s1.ax1x.com/2020/09/28/0Va5zq.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="electron-pack | electron-pack爬坑记"></a></div><div class="recent-post-info"><a class="article-title" href="/electron-pack-qus/" title="electron-pack | electron-pack爬坑记">electron-pack | electron-pack爬坑记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-28T12:21:00.000Z" title="发表于 2020-09-28 20:21:00">2020-09-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/">打包</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/npm/">npm</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/npm/electron-pack/">electron-pack</a></span></div><div class="content">
 electron-pack | electron-pack爬坑记
 electron-pack是我个人开发的一个方便自己使用的npm安装包。他的诞生经历了不少的坎坷。
 
@@ -155,7 +193,7 @@ electron-pack是我个人开发的一个方便自己使用的npm安装包。他�
 解决方案：
 12345node: &#123;         fs: &#39;empty&#39;,         net:&#39;empty&#39;,         tls:&quot;empty&quot;,   &#125;
 
-结果：在后续中运行报错： Uncaught TypeError: fs.exists ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/FIRST_NPM/" title="npm包 | 我的第一个npm安装包">     <img class="post_bg" data-src="https://s1.ax1x.com/2020/09/28/0VYxrF.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="npm包 | 我的第一个npm安装包"></a></div><div class="recent-post-info"><a class="article-title" href="/FIRST_NPM/" title="npm包 | 我的第一个npm安装包">npm包 | 我的第一个npm安装包</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-28 20:15:00"><i class="far fa-calendar-alt"></i>2020-09-28</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/">打包</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/npm/">npm</a></span></div><div class="content">
+结果：在后续中运行报错： Uncaught TypeError: fs.exists ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/FIRST_NPM/" title="npm包 | 我的第一个npm安装包">     <img class="post_bg" data-lazy-src="https://s1.ax1x.com/2020/09/28/0VYxrF.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="npm包 | 我的第一个npm安装包"></a></div><div class="recent-post-info"><a class="article-title" href="/FIRST_NPM/" title="npm包 | 我的第一个npm安装包">npm包 | 我的第一个npm安装包</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-28T12:15:00.000Z" title="发表于 2020-09-28 20:15:00">2020-09-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/">打包</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%89%93%E5%8C%85/npm/">npm</a></span></div><div class="content">
 我的第一个npm安装包
 应公司业务要求，需要制作桌面安装程序。同时也要替代QT，制作QT的安装程序。所以最后我选用了electron制作exe，配合Inno Setup Compiler制作安装包。因为这玩意是我一个人在研究，为了避免我哪天休息不在，还找我打包的情况，我特意写了将这个项目制作成为了一个npm安装包，并附上相应文档，相信还是能看懂的。
 
@@ -165,7 +203,7 @@ index.js 是我引用main.js的文件，并导出，也就是整个npm的入口�
 1module.exports &#x3D; require(&#39;.&#x2F;src&#x2F;main&#39;)
 
 build/index.js 是我使用webpack打包的文件。因为需要将第三方插件的引用打包。避免使用引用错误，这里如果纯自己开发的，不引用第三方插件，不需要打包。
-1234567891011const path &#x3D; require(&#39;path&#39;)​module.exports &#x3D; &#123;    entry: & ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/website/" title="博客 | 如何快速搭建个人博客">     <img class="post_bg" data-src="https://s2.ax1x.com/2020/03/05/3HM2dK.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客 | 如何快速搭建个人博客"></a></div><div class="recent-post-info"><a class="article-title" href="/website/" title="博客 | 如何快速搭建个人博客">博客 | 如何快速搭建个人博客</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-08-19 23:35:00"><i class="far fa-calendar-alt"></i>2020-08-19</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="content">
+1234567891011const path &#x3D; require(&#39;path&#39;)​module.exports &#x3D; &#123;    entry: & ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/website/" title="博客 | 如何快速搭建个人博客">     <img class="post_bg" data-lazy-src="https://s2.ax1x.com/2020/03/05/3HM2dK.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客 | 如何快速搭建个人博客"></a></div><div class="recent-post-info"><a class="article-title" href="/website/" title="博客 | 如何快速搭建个人博客">博客 | 如何快速搭建个人博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-19T15:35:00.000Z" title="发表于 2020-08-19 23:35:00">2020-08-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="content">
 
 我们这一生很短，我们终将会失去它，所以不妨大胆一点，爱一个人，攀一座山，追一次梦，不妨大胆一点，有很多事没有答案。有时候想发表点文章，照片视频什么之类的，方便手机随时查看，而不占用手机内存。还没有太多的局限。那么搭建自己的个人博客是最好的选择了。
 
@@ -180,7 +218,7 @@ hexo常用命令：1234hexo clean # 用于清理缓存hexo g # 生成新的文�
 
 当然，安装hexo之前你需要安装node。
 当你初始化完博客之后，hexo serve运行博客，就可以在控制台查看到一盒链接，在浏览器输入链接（localhost:4000)即可查看博客长什么样子了。
-更换主题在初始化之后，你会感觉自己的你博客不怎么好看，没关系，更换一个主题即可。网上有很多的主题，选择 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/diy/" title="装机 | 我的第一次？">     <img class="post_bg" data-src="https://s1.ax1x.com/2020/06/24/NwAQ39.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="装机 | 我的第一次？"></a></div><div class="recent-post-info"><a class="article-title" href="/diy/" title="装机 | 我的第一次？">装机 | 我的第一次？</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-20 13:39:00"><i class="far fa-calendar-alt"></i>2020-06-20</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="content">
+更换主题在初始化之后，你会感觉自己的你博客不怎么好看，没关系，更换一个主题即可。网上有很多的主题，选择 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/diy/" title="装机 | 我的第一次？">     <img class="post_bg" data-lazy-src="https://s1.ax1x.com/2020/06/24/NwAQ39.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="装机 | 我的第一次？"></a></div><div class="recent-post-info"><a class="article-title" href="/diy/" title="装机 | 我的第一次？">装机 | 我的第一次？</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-06-20T05:39:00.000Z" title="发表于 2020-06-20 13:39:00">2020-06-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="content">
 不知道是多少天了，在无数个难眠的夜晚，我辗转反侧，想有自己的台式电脑，最好是自己组装的，正好，今年刚刚毕业，又赶上了618活动，就开始买买买（虽然自己是在之前两天买的）！
 显示器买了快半个月了，在家都是将他作为笔记本电脑的主显示器了，笔记本电脑反而成为了默默的主机….可怜兮兮！
 后来买了机械键盘，笔记本电脑就真正成为了主机….
@@ -196,7 +234,7 @@ hexo常用命令：1234hexo clean # 用于清理缓存hexo g # 生成新的文�
 
 电源电源：爱国者的模组版电源，279大洋，优惠后274大洋。
 
-内存条内存条：一条8G的3200MHZ的 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/gradution/" title="毕业 | 人生百态，我是其一">     <img class="post_bg" data-src="https://s1.ax1x.com/2020/03/28/GAJXCV.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="毕业 | 人生百态，我是其一"></a></div><div class="recent-post-info"><a class="article-title" href="/gradution/" title="毕业 | 人生百态，我是其一">毕业 | 人生百态，我是其一</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-10 12:43:08"><i class="far fa-calendar-alt"></i>2020-06-10</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></span></div><div class="content">
+内存条内存条：一条8G的3200MHZ的 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/gradution/" title="毕业 | 人生百态，我是其一">     <img class="post_bg" data-lazy-src="https://s1.ax1x.com/2020/03/28/GAJXCV.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="毕业 | 人生百态，我是其一"></a></div><div class="recent-post-info"><a class="article-title" href="/gradution/" title="毕业 | 人生百态，我是其一">毕业 | 人生百态，我是其一</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-06-10T04:43:08.000Z" title="发表于 2020-06-10 12:43:08">2020-06-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></span></div><div class="content">
 
 如果我们有机会重返青春现场，一定发现，那个青春，与我们相携终身，不断怀念，惊鸿照影的青春有异，我们对它的怀念，是一种刻骨的高估。
 
@@ -205,42 +243,106 @@ hexo常用命令：1234hexo clean # 用于清理缓存hexo g # 生成新的文�
 不过还是要写写什么的。就算是给自己的大学给一个交代吧。
 关于兴趣与比赛大一，拥有了自己的第一台电脑。自己可劲折腾，各种软件都想尝试，各种系统也都试用，甚至是开始了拆机之旅。虽然对很多人说，那是一个非常简单的事情，可是在那个时候，我是真的第一次。
 大一，我也开始比赛之旅，这条不归路还是被英语、日语专业等朋友带起来的，可以说他们是最大的共犯了。从此到大三，我才结束了我这罪恶的比赛之旅，没有什么大的成绩，小成绩不断，小打小闹的。现在想想，大一和大家在1402（应该是这个办公室？）写材料，初现稚嫩。后来大二，占用了赵文浩学长的办公室，和老邓、天正、凯捷等开始熬夜通宵写材料，开始熟练于心。大三，自己带了团队，但是结果不怎么美好，虽然也拿了奖。
-关于工作四年，参加了不少的工作，认识了不少的人，有的现在和我一样毕业了 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/softwriting/" title="软著 | 手把手教你如何申请软著">     <img class="post_bg" data-src="https://s1.ax1x.com/2020/03/28/GAJpkt.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软著 | 手把手教你如何申请软著"></a></div><div class="recent-post-info"><a class="article-title" href="/softwriting/" title="软著 | 手把手教你如何申请软著">软著 | 手把手教你如何申请软著</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-05-17 13:39:00"><i class="far fa-calendar-alt"></i>2020-05-17</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="content">
+关于工作四年，参加了不少的工作，认识了不少的人，有的现在和我一样毕业了 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/softwriting/" title="软著 | 手把手教你如何申请软著">     <img class="post_bg" data-lazy-src="https://s1.ax1x.com/2020/03/28/GAJpkt.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软著 | 手把手教你如何申请软著"></a></div><div class="recent-post-info"><a class="article-title" href="/softwriting/" title="软著 | 手把手教你如何申请软著">软著 | 手把手教你如何申请软著</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-17T05:39:00.000Z" title="发表于 2020-05-17 13:39:00">2020-05-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="content">
 毕业设计，经过磨难，终于写出了一个基本版本，我称他为1.0.0版本。这是一个电子商务网站，包括前台购买，后台管理系统，数据库和服务端。较为完整，就申请了个软著，后面也没有继续完善嘞。
 1 准备好要申请的软件软著，全称软件著作权，这个简单的讲，就是拿一个软件去申请一个软件属于你的权利，所以软件是核心，最好是自己写的，或者是没有过的。反正就是不要抄袭别人的就好了。
 2 准备两份材料两份材料，包含了代码部分和软件设计书或者软件使用说明书。
 代码部分，很简单，将你的程序软件的核心代码拷贝一份，放在一个文件下面，必要要有60页，其实这个很简单的，一个软件程序，动不动就是几千行上万行的。
 软件设计书，或者软件使用说明书。前者，就是写你这个程序当时是怎么设计的，系统需求，系统设计，系统实现这几个部分是最重要的，还要写数据库是怎么设计的，包含了哪些表，表里面含有哪些字段。软件使用说明书，就是指这个软件是怎么使用的，你要一步一步的说明哪个功能模块怎么进入，怎么操作，会得到什么结果之类的。这个就比较详细，但是一般也没超过20页。
-3 准备合作开发合同如果你是个人开发的，就可以跳过这一步了，只有是合作开发 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">橘子orange</div><div class="author-info__description">人生不像做饭，不能等万事俱备了才下锅</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">10</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">12</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">8</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/orangeed" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1208917130@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://s1.ax1x.com/2020/07/04/NxncdA.jpg" target="_blank" title="微信公众号_橘子的分享"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://www.zhihu.com/people/bu-qi-64-11" target="_blank" title="知乎_橘子的分享"><i class="fab fa-zhihu"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">最近心慌慌！</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/update/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://s3.ax1x.com/2020/11/21/D3PJpt.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="热更新 | electron热更新" alt="热更新 | electron热更新"/></div><div class="aside-post-title"><div class="aside-post_title" href="/update/" title="热更新 | electron热更新">热更新 | electron热更新</div><time class="aside-post_meta post-meta__date" title="发表于 2020-11-21 20:43:00">2020-11-21</time></div></a></div><div class="aside-recent-post"><a href="/app/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://s1.ax1x.com/2020/10/08/00cKiQ.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="app | 如何制作一个app" alt="app | 如何制作一个app"/></div><div class="aside-post-title"><div class="aside-post_title" href="/app/" title="app | 如何制作一个app">app | 如何制作一个app</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-08 18:00:00">2020-10-08</time></div></a></div><div class="aside-recent-post"><a href="/taro/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://s1.ax1x.com/2020/10/08/00Qd8s.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="taro | taro使用及结论" alt="taro | taro使用及结论"/></div><div class="aside-post-title"><div class="aside-post_title" href="/taro/" title="taro | taro使用及结论">taro | taro使用及结论</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-08 16:00:00">2020-10-08</time></div></a></div><div class="aside-recent-post"><a href="/video/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://s1.ax1x.com/2020/09/28/0VDC3d.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="摄像头 | 浏览器调用摄像头并实现截图保存的效果" alt="摄像头 | 浏览器调用摄像头并实现截图保存的效果"/></div><div class="aside-post-title"><div class="aside-post_title" href="/video/" title="摄像头 | 浏览器调用摄像头并实现截图保存的效果">摄像头 | 浏览器调用摄像头并实现截图保存的效果</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-28 20:47:00">2020-09-28</time></div></a></div><div class="aside-recent-post"><a href="/electron-pack-qus/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://s1.ax1x.com/2020/09/28/0Va5zq.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="electron-pack | electron-pack爬坑记" alt="electron-pack | electron-pack爬坑记"/></div><div class="aside-post-title"><div class="aside-post_title" href="/electron-pack-qus/" title="electron-pack | electron-pack爬坑记">electron-pack | electron-pack爬坑记</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-28 20:21:00">2020-09-28</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+3 准备合作开发合同如果你是个人开发的，就可以跳过这一步了，只有是合作开发 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">橘子orange</div><div class="author-info__description">人生不像做饭，不能等万事俱备了才下锅</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/orangeed"><i class="fab fa-github"></i><span>同性交友网站</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/orangeed" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1208917130@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://s1.ax1x.com/2020/07/04/NxncdA.jpg" target="_blank" title="微信公众号_橘子的分享"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://www.zhihu.com/people/bu-qi-64-11" target="_blank" title="知乎_橘子的分享"><i class="fab fa-zhihu"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">我终于脱单了！</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/update/" title="热更新 | electron热更新"><img data-lazy-src="https://s3.ax1x.com/2020/11/21/D3PJpt.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="热更新 | electron热更新"/></a><div class="content"><a class="title" href="/update/" title="热更新 | electron热更新">热更新 | electron热更新</a><time datetime="2020-11-21T12:43:00.000Z" title="发表于 2020-11-21 20:43:00">2020-11-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/app/" title="app | 如何制作一个app"><img data-lazy-src="https://s1.ax1x.com/2020/10/08/00cKiQ.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="app | 如何制作一个app"/></a><div class="content"><a class="title" href="/app/" title="app | 如何制作一个app">app | 如何制作一个app</a><time datetime="2020-10-08T10:00:00.000Z" title="发表于 2020-10-08 18:00:00">2020-10-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/taro/" title="taro | taro使用及结论"><img data-lazy-src="https://s1.ax1x.com/2020/10/08/00Qd8s.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="taro | taro使用及结论"/></a><div class="content"><a class="title" href="/taro/" title="taro | taro使用及结论">taro | taro使用及结论</a><time datetime="2020-10-08T08:00:00.000Z" title="发表于 2020-10-08 16:00:00">2020-10-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/video/" title="摄像头 | 浏览器调用摄像头并实现截图保存的效果"><img data-lazy-src="https://s1.ax1x.com/2020/09/28/0VDC3d.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="摄像头 | 浏览器调用摄像头并实现截图保存的效果"/></a><div class="content"><a class="title" href="/video/" title="摄像头 | 浏览器调用摄像头并实现截图保存的效果">摄像头 | 浏览器调用摄像头并实现截图保存的效果</a><time datetime="2020-09-28T12:47:00.000Z" title="发表于 2020-09-28 20:47:00">2020-09-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/electron-pack-qus/" title="electron-pack | electron-pack爬坑记"><img data-lazy-src="https://s1.ax1x.com/2020/09/28/0Va5zq.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="electron-pack | electron-pack爬坑记"/></a><div class="content"><a class="title" href="/electron-pack-qus/" title="electron-pack | electron-pack爬坑记">electron-pack | electron-pack爬坑记</a><time datetime="2020-09-28T12:21:00.000Z" title="发表于 2020-09-28 20:21:00">2020-09-28</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%89%93%E5%8C%85/"><span class="card-category-list-name">打包</span><span class="card-category-list-count">3</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%89%93%E5%8C%85/npm/"><span class="card-category-list-name">npm</span><span class="card-category-list-count">3</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%89%93%E5%8C%85/npm/electron-pack/"><span class="card-category-list-name">electron-pack</span><span class="card-category-list-count">2</span></a></li></ul></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">技术</span><span class="card-category-list-count">2</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/taro/"><span class="card-category-list-name">taro</span><span class="card-category-list-count">1</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">教程</span><span class="card-category-list-count">4</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%99%E7%A8%8B/app/"><span class="card-category-list-name">app</span><span class="card-category-list-count">1</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/"><span class="card-category-list-name">生活</span><span class="card-category-list-count">1</span></a></li>
-                       
-            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/DIV/" style="font-size: 16px; color: #999">DIV</a> <a href="/tags/app/" style="font-size: 16px; color: #999">app</a> <a href="/tags/electron/" style="font-size: 22px; color: #99a9bf">electron</a> <a href="/tags/node/" style="font-size: 16px; color: #999">node</a> <a href="/tags/taro/" style="font-size: 16px; color: #999">taro</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 16px; color: #999">博客</a> <a href="/tags/%E6%AF%95%E4%B8%9A/" style="font-size: 16px; color: #999">毕业</a> <a href="/tags/%E7%83%AD%E6%9B%B4%E6%96%B0/" style="font-size: 16px; color: #999">热更新</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 16px; color: #999">生活</a> <a href="/tags/%E7%94%B5%E8%84%91/" style="font-size: 16px; color: #999">电脑</a> <a href="/tags/%E8%A3%85%E6%9C%BA/" style="font-size: 16px; color: #999">装机</a> <a href="/tags/%E8%BD%AF%E8%91%97/" style="font-size: 16px; color: #999">软著</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">1</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">10</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" publish_date="7/4/2020 00:00:00">     </div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">8.3k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://s1.ax1x.com/2020/07/04/Nvarv9.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By 橘子orange</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">这是橘子orange的个人博客哟！</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script defer id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = true;
-document.body.addEventListener('input', POWERMODE);
-</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/third-party/click_heart.js"></script><script src="/js/third-party/ClickShowText.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleType = function () {
-  var subtitleEffect = true
-  fetch('https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json',)
-    .then(function (res) {
-      return res.json()
+            
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/DIV/" style="font-size: 1.1em; color: #999">DIV</a> <a href="/tags/app/" style="font-size: 1.1em; color: #999">app</a> <a href="/tags/electron/" style="font-size: 1.5em; color: #99a9bf">electron</a> <a href="/tags/node/" style="font-size: 1.1em; color: #999">node</a> <a href="/tags/taro/" style="font-size: 1.1em; color: #999">taro</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.1em; color: #999">博客</a> <a href="/tags/%E6%AF%95%E4%B8%9A/" style="font-size: 1.1em; color: #999">毕业</a> <a href="/tags/%E7%83%AD%E6%9B%B4%E6%96%B0/" style="font-size: 1.1em; color: #999">热更新</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.1em; color: #999">生活</a> <a href="/tags/%E7%94%B5%E8%84%91/" style="font-size: 1.1em; color: #999">电脑</a> <a href="/tags/%E8%A3%85%E6%9C%BA/" style="font-size: 1.1em; color: #999">装机</a> <a href="/tags/%E8%BD%AF%E8%91%97/" style="font-size: 1.1em; color: #999">软著</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">1</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">10</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-07-03T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">8.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-12-06T11:49:23.247Z"></div></div></div></div></div></div></div></main><footer id="footer" style="background: url(https://s3.ax1x.com/2020/12/06/DXOh7T.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2020 By 橘子orange</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">这是橘子orange的个人博客哟！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "今日事&#44;今日毕,Never put off till tomorrow what you can do today".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
     })
-    .then(function (data) {
-      if (subtitleEffect) {
-        var sub = "今日事&#44;今日毕,Never put off till tomorrow what you can do today".length == 0 ? new Array() : "今日事&#44;今日毕,Never put off till tomorrow what you can do today".split(',')
-        var both = sub.unshift(data.text)
-        var typed = new Typed('#subtitle', {
-          strings: sub,
-          startDelay: 300,
-          typeSpeed: 150,
-          loop: true,
-          backSpeed: 50,
-        })
-      } else {
-        document.getElementById('subtitle').innerHTML = data.text
-      }
-    })
-    .catch(function (err) {
-      console.error(err)
-    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '今日事&#44;今日毕'
+  }
 }
-window.addEventListener('load', subtitleType)
-</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script></div></body></html>
