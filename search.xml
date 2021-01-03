@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>rules | rules表单验证的参数问题</title>
+      <link href="rules/"/>
+      <url>rules/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src= "/img/loading.gif" data-lazy-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><blockquote><p>在使用element或者antdv等ui的时候，基本很容易忽略一个东西，rules的参数，其中有个type参数。至少我可能忽略了….</p></blockquote><h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><p><strong style='color:orange;font-size:16px' >string</strong>: Must be of type string. This is the default type.这个是默认值</p><p><strong style='color:orange;font-size:16px' >number</strong>: Must be of type number.</p><p><strong style='color:orange;font-size:16px' >boolean</strong>: Must be of type boolean.</p><p><strong style='color:orange;font-size:16px' >method</strong>: Must be of type function.</p><p><strong style='color:orange;font-size:16px' >regexp</strong>: Must be an instance of RegExp or a string that does not generate an exception when creating a new RegExp.</p><p><strong style='color:orange;font-size:16px' >integer</strong>: Must be of type number and an integer.</p><p><strong style='color:orange;font-size:16px' >float</strong>: Must be of type number and a floating point number.</p><p><strong style='color:orange;font-size:16px' >array</strong>: Must be an array as determined by Array.isArray.</p><p><strong style='color:orange;font-size:16px' >object</strong>: Must be of type object and not Array.isArray.</p><p><strong style='color:orange;font-size:16px' >enum</strong>: Value must exist in the enum.也就是绑定的数据必须是这里面的，比如[c1,c2],那么v-model绑定的数据只能是c1或者c2</p><p><strong style='color:orange;font-size:16px' >date</strong>: Value must be valid as determined by Date</p><p><strong style='color:orange;font-size:16px' >url</strong>: Must be of type url.</p><p><strong style='color:orange;font-size:16px' >hex</strong>: Must be of type hex.</p><p><strong style='color:orange;font-size:16px' >email</strong>: Must be of type email.<br>any: Can be any type.</p><h2 id="Required"><a href="#Required" class="headerlink" title="Required"></a>Required</h2><p>属性为true是，该字段为必填项</p><h2 id="Pattern"><a href="#Pattern" class="headerlink" title="Pattern"></a>Pattern</h2><p>该 pattern 规则属性指示一个正则表达式的值必须匹配，才能通过验证。</p><h2 id="min、max"><a href="#min、max" class="headerlink" title="min、max"></a>min、max</h2><p>规定最小长度与最大长度</p><h2 id="len"><a href="#len" class="headerlink" title="len"></a>len</h2><p>指定确切长度。（如果该len属性与min和max范围属性结合使用，len则优先。）</p><h2 id="whitespace"><a href="#whitespace" class="headerlink" title="whitespace"></a>whitespace</h2><p>验证是否只有空格,必选时，空格是否会被视为错误</p><h2 id="Transform"><a href="#Transform" class="headerlink" title="Transform"></a>Transform</h2><p>有时有必要在验证之前转换值，以强制或以某种方式对其进行清理。为此 transform ，向验证规则添加一个function。在验证之前，先转换属性，然后将其重新分配给源对象，以更改该属性的值。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import Schema from &#39;async-validator&#39;;</span><br><span class="line">const descriptor &#x3D; &#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    type: &#39;string&#39;,</span><br><span class="line">    required: true,</span><br><span class="line">    pattern: &#x2F;^[a-z]+$&#x2F;,</span><br><span class="line">    transform(value) &#123;</span><br><span class="line">      return value.trim();</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">const validator &#x3D; new Schema(descriptor);</span><br><span class="line">const source &#x3D; &#123; name: &#39; user  &#39; &#125;;</span><br><span class="line">validator.validate(source)</span><br><span class="line">  .then(() &#x3D;&gt; assert.equal(source.name, &#39;user&#39;));</span><br></pre></td></tr></table></figure><h2 id="Messages"><a href="#Messages" class="headerlink" title="Messages"></a>Messages</h2><p>效验不通过显示</p><h2 id="asyncValidator"><a href="#asyncValidator" class="headerlink" title="asyncValidator"></a>asyncValidator</h2><p>可以为指定的字段自定义异步验证功能</p><h2 id="validator"><a href="#validator" class="headerlink" title="validator"></a>validator</h2><p>可以为指定字段自定义验证功能</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let numberLengthSix &#x3D; (rule, value, callback) &#x3D;&gt; &#123;</span><br><span class="line">  if(String(value).length &gt; 6) &#123;</span><br><span class="line">    callback(&#39;超出限制&#39;)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    callback()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 校验</span><br><span class="line">numberLengthSix: [</span><br><span class="line">  &#123;validator: numberLengthSix, trigger: &#39;blur&#39;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> UI框架 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> rules </tag>
+            
+            <tag> 表单验证 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>侧滑 | h5打包后的app侧滑解决方案</title>
       <link href="Sideslip/"/>
       <url>Sideslip/</url>
@@ -41,6 +68,8 @@
       
       
       <categories>
+          
+          <category> 生活 </category>
           
           <category> 爱情 </category>
           
