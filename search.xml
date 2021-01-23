@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>监控视频 | 网页展示监控视频</title>
+      <link href="monitor/"/>
+      <url>monitor/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src= "/img/loading.gif" data-lazy-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><blockquote><p>前段时间，因为项目需要，需要在网页端现实监控实时画面，但是摄像头的控件只支持IE浏览器，所以抛弃了摄像头本身的控件，选择自己去实现。</p></blockquote><p><strong style='font-style:oblique;color:orange'>大致的思路就是通过推流拉流的形式实现，中间开一个服务器来支持，想着想着就感觉是写一个简单的直播demo。</strong> </p><h2 id="1-服务器"><a href="#1-服务器" class="headerlink" title="1.服务器"></a>1.服务器</h2><p>没有安装http-server的话，得先安装一个。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add http-server</span><br></pre></td></tr></table></figure><p>有安装http-server的话，直接运行就好了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http-server</span><br></pre></td></tr></table></figure><p>这样就开启了一个服务器。</p><h2 id="2-jsmpeg"><a href="#2-jsmpeg" class="headerlink" title="2.jsmpeg"></a>2.jsmpeg</h2><p>下载jsmpeg,进入文件夹，运行websocket-relay.js文件<br>可以理解为 node websocket-relay.js 密钥 推流端口 拉流端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node websocket-relay.js cj123456 8081 8082</span><br></pre></td></tr></table></figure><h2 id="3-ffmpeg"><a href="#3-ffmpeg" class="headerlink" title="3.ffmpeg"></a>3.ffmpeg</h2><p>下载ffmpeg，同时设置好他的环境变量，这里不会设置环境变量的话，可以自行谷歌“ffmpeg 环境变量”<br>视频转换 ffmpeg -i “视频地址” -q 0 -f mpegts -codec:v mpeg1video -s 1366x768 推流地址(这里的地址就是127.0.0.1，端口号上上面服务器监听的，后面的是jsmepg设置的密钥)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i &quot;rtsp:&#x2F;&#x2F;admin:cj123456@192.168.60.2&#x2F;h264&#x2F;ch1&#x2F;main&#x2F;av_stream&quot; -q 0 -f mpegts -codec:v mpeg1video -s 1366x768 http:&#x2F;&#x2F;127.0.0.1:8081&#x2F;cj123456</span><br></pre></td></tr></table></figure><p>ffmpeg的具体参数可以在官网查看</p><blockquote><p>传送门 <a href="https://ffmpeg.org/ffmpeg.html">ffmpeg</a></p></blockquote><h2 id="4-现实监控画面"><a href="#4-现实监控画面" class="headerlink" title="4.现实监控画面"></a>4.现实监控画面</h2><p>简单的例子，我们可以打开jsmpeg中的一个demo。</p><p>修改地址</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var url &#x3D; &#39;ws:&#x2F;&#x2F;&#39;+document.location.hostname+&#39;:8082&#x2F;&#39;; </span><br><span class="line">改为</span><br><span class="line">var url &#x3D; &#39;ws:&#x2F;&#x2F;127.0.0.1:8082&#x2F;&#39;;</span><br></pre></td></tr></table></figure><p>就可以显示实时的监控画面了。但是这也只是一个简单的实现，当监控的画面多了以后，按照这样的思路，我们需要开很多的进程，同时，监听的端口不一样，页面所对应的监控画面的端口也不一样，这样就需要用node去实现监听，动态改变端口，实现一个页面显示多个监控画面。</p><h2 id="5-视频地址"><a href="#5-视频地址" class="headerlink" title="5.视频地址"></a>5.视频地址</h2><p>不同的视频监控设备的视频编码不同，地址也不一样的。比如我用的海康威视设备。<br>rtsp://username:password@<ipaddress>/<videotype>/ch<number>/<streamtype></p><blockquote><p>传送门 <a href="https://hkrobot.hikvision.com/servlet/WXShow?action=sac&wxcId=63&sysNum=145716889796196&FromUserName=oNNCAjhEEHsBeiMXvFxAmDph71JI&sId=236075&subId=218733">海康威视视频地址参数</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 监控 </tag>
+            
+            <tag> 网页版 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>热更新 | electron热更新2</title>
       <link href="update2/"/>
       <url>update2/</url>
