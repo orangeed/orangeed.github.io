@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>纪念日 | 100天纪念日</title>
+      <link href="100/"/>
+      <url>100/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src= "/img/loading.gif" data-lazy-src="../img/longlogo.jpg" alt="logo"></p><blockquote><p>100天纪念日</p></blockquote><p  style='font-size:20px;margin-top:20px'><b>日期：</b><span style='color:#fcc'>100天纪念日</span> </p><p  style='font-size:20px;margin-top:20px'><b>心情：</b> </p><div style='font-size:20px;color:#fcc'><span>开心：</span>收到了令我非常感动的礼物。</div><div style='font-size:20px;color:#fcc'><span>愧疚：</span>我并没有准备礼物。</div><div style='font-size:20px;color:#fcc'><span>复杂：</span>愧疚中夹杂着开心以及给自己暗自定了个目标。</div><p style='font-size:20px;margin-top:20px'><b>礼物：</b></p><p><img src= "/img/loading.gif" data-lazy-src="../img/2021/3/100(1).jpg" alt="包装"></p><p><img src= "/img/loading.gif" data-lazy-src="../img/2021/3/100(2).jpg" alt="礼物"></p><p><img src= "/img/loading.gif" data-lazy-src="../img/2021/3/100(3).jpg" alt="摆出来"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+          <category> 爱情 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 纪念日 </tag>
+            
+            <tag> 100天 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker | docker踩坑记录</title>
       <link href="docker/"/>
       <url>docker/</url>
