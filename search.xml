@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>视频监控 | 视频监控续集flv</title>
+      <link href="%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7/"/>
+      <url>%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src= "/img/loading.gif" data-lazy-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><blockquote><p>上次写了一个视频监控转换的demo，后来交给了后端去处理，返回一个视频的链接，交由前端播放。<br>地址如下：<a href="https://orangecj.cn/monitor/">视频监控</a></p></blockquote><h2 id="链接格式"><a href="#链接格式" class="headerlink" title="链接格式"></a>链接格式</h2><p>后端返回的视频监控链接有三种格式。<br>m3u8：虽然可以直接用原生的video播放，但是对于监控来说，延迟太高了，足足8秒的延迟。<br>rtmp：播放这玩意还要有flash的支持，但是人家flash都要退出历史舞台了。<br>flv：这个相对于上面两个来说，延迟低，还不用flash。</p><h2 id="选择实现方式"><a href="#选择实现方式" class="headerlink" title="选择实现方式"></a>选择实现方式</h2><p>三种格式都有做，先m3u8，然后rtmp，最后flv。<br>m3u8就不说了。</p><h3 id="rtmp"><a href="#rtmp" class="headerlink" title="rtmp"></a>rtmp</h3><p>想着前人种树后人乘凉的思想，选择了插件，video.js，但是发现新版本的抛弃了flash，于是使用了旧版本，但是还是需要安装flash的插件。</p><p>后来搭建好了，去测试的时候，发现，好家伙，我的浏览器并没有flash。</p><p>其实中间，还是用了vue-video-player，这个是基于video.js再一次封装的一个vue插件。发现确实比video.js好用点，但是没办法，我还是选择使用flv格式的吧。</p><blockquote><p>rtmp的代码在我的代码仓库里面，里面有video.js和vue-video-player的使用代码 <a href="https://github.com/orangeed/flv_video">仓库地址</a></p></blockquote><h3 id="flv"><a href="#flv" class="headerlink" title="flv"></a>flv</h3><p>在不使用flash的情况下，还是选择了flv，使用了flv.js的插件实现视频监控的播放。</p><p>使用起来，其实超级简单。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; template</span><br><span class="line">&lt;video</span><br><span class="line">    id&#x3D;&quot;videoElement&quot;</span><br><span class="line">    ref&#x3D;&quot;first&quot;</span><br><span class="line">    class&#x3D;&quot;centeredVideo&quot;</span><br><span class="line">    controls</span><br><span class="line">    autoplay</span><br><span class="line">    width&#x3D;&quot;1024&quot;</span><br><span class="line">    height&#x3D;&quot;576&quot;</span><br><span class="line">    &gt;您的浏览器不支持video&lt;&#x2F;video&gt;</span><br><span class="line">&#x2F;&#x2F; js</span><br><span class="line">if (flvjs.isSupported()) &#123;</span><br><span class="line">        let flvPlayer &#x3D; flvjs.createPlayer(&#123;</span><br><span class="line">          isLive: true,</span><br><span class="line">          type: &quot;flv&quot;,</span><br><span class="line">          url: this.playSouce.address,</span><br><span class="line">        &#125;);</span><br><span class="line">        flvPlayer.attachMediaElement(this.playSouce.name);</span><br><span class="line">        flvPlayer.load(); &#x2F;&#x2F;加载</span><br><span class="line">        flvPlayer.play();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure><p>这样就实现了一个flv播放器的创建。</p><p>当然，需求的demo可能还要多一点，点击视频暂停，发送该视频的id给服务器，让服务器知道这个监控暂停了。<br>于是在视频中加了点击事件，并且获取这个视频对象，获取对象中的id，然后发送请求。前提是这个对象中有id，于是在获取数据播放的时候，就在这个对象中添加了id的这个值。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">this.playSouce.name.onclick &#x3D; () &#x3D;&gt; &#123;</span><br><span class="line">          console.log(flvPlayer);</span><br><span class="line">          this.handleStopItem(flvPlayer._mediaElement.playID);</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure><p>通过上面的形式，就可以获取到了id，并且发送请求。</p><p>那暂停全部的视频，则需要将所有创建的视频都给push到一个数组中，在全部暂停的时候遍历，然后为每一个添加pause的事件。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">this.videoPlayer.push(flvPlayer);</span><br><span class="line">this.videoPlayer.forEach((play) &#x3D;&gt; &#123;</span><br><span class="line">    play.pause();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>通过这样的方式实现暂停全部监控，并同时告诉服务端，暂停监控，也不再推流。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 监控 </tag>
+            
+            <tag> 网页版 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数星星⭐ | 青岛之行</title>
       <link href="%E9%9D%92%E5%B2%9B/"/>
       <url>%E9%9D%92%E5%B2%9B/</url>
