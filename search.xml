@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>JavaScript | 检测代码的运行时间</title>
+      <link href="detectionCodeTime/"/>
+      <url>detectionCodeTime/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src= "/img/loading.gif" data-lazy-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><blockquote><p>当一个一个需求有多个解决方案的时候，就要考虑性能的问题，那么检测代码运行时间是最直接的方式。</p></blockquote><p>通过<code>console.time()</code>以及<code>console.timeEnd()</code>来检测代码的运行时间。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开始时间</span></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">&quot;taskData&quot;</span>);</span><br><span class="line"><span class="comment">// 需要检测运行时间的代码</span></span><br><span class="line"><span class="keyword">const</span> taskData =  <span class="string">&#x27;&#123;name:&#x27;</span>orange<span class="string">&#x27;,age:18&#125;&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;return &quot;</span> + taskData)());  <span class="comment">//  &#123;name: &quot;orange&quot;, age: 18&#125;</span></span><br><span class="line"><span class="comment">// 结束时间</span></span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">&quot;taskData&quot;</span>);  <span class="comment">//  taskData: 0.260009765625 ms</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript | 字符串转对象三种方法</title>
+      <link href="strToObject/"/>
+      <url>strToObject/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src= "/img/loading.gif" data-lazy-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><blockquote><p>在开发的时候经常遇到字符串转 json 的需求。</p></blockquote><h3 id="JSON-Parse"><a href="#JSON-Parse" class="headerlink" title="JSON.Parse()"></a>JSON.Parse()</h3><p>在这次使用<code>JSON.Parse()</code>的时候报错，<code>Unexpected token &#123;in JSON at position 217362</code>，经过查资料发现，类似的报错还挺多的，比如<code>Unexpected token &lt; in JSON at position 0</code>，比如<code>Unexpected token &#39; in JSON at position 1</code>。</p><h3 id="eval"><a href="#eval" class="headerlink" title="eval()"></a>eval()</h3><p><code>eval()</code>函数可以执行任何的 JavaScript 代码，所以其实蛮危险的，容易被插入恶意脚本</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jsonStr = <span class="string">&#x27;&#123;name:&quot;orange&quot;,age:18&#125;&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">eval</span>(<span class="string">&quot;(&quot;</span> + jsonStr + <span class="string">&quot;)&quot;</span>)）</span><br></pre></td></tr></table></figure><h3 id="使用函数"><a href="#使用函数" class="headerlink" title="使用函数"></a>使用函数</h3><p>其原理就是通过拼接字符串，然后在 Function 创建一个匿名方法然后调用</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jsonStr = <span class="string">&#x27;&#123;name:&quot;orange&quot;,age:18&#125;&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;return &quot;</span> + jsonStr)）</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>视频监控 | 视频监控续集flv</title>
       <link href="%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7/"/>
       <url>%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7/</url>
