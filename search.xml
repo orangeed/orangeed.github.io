@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>组件库 | 自己的组件库</title>
+      <link href="componentLibrary/"/>
+      <url>componentLibrary/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src= "/img/loading.gif" data-lazy-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><p>时隔好久好久，终于更新了点啥。</p><p>刚到西安一个月，写代码的时候发现有很多需要自己手写的组件UI。于是将自己手写的UI组件都给上传至Github上面，方便以后使用。</p><p>项目地址是：<br><a href="https://github.com/orangeed/componentLibrary"><span style='font-size:20px'>UI组件库</span></a></p><p>这才刚刚写，后面慢慢增加吧。</p><p>目前更新了<span style='color:orange;font-size:16px'>排名或者进度条组件、大卡片、小卡片</span>组件</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript | 检测代码的运行时间</title>
       <link href="detectionCodeTime/"/>
       <url>detectionCodeTime/</url>
