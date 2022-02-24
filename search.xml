@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>基础知识 | Git合并</title>
+      <link href="git%E5%90%88%E5%B9%B6/"/>
+      <url>git%E5%90%88%E5%B9%B6/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src= "/img/loading.gif" data-lazy-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><h2 id="git合并"><a href="#git合并" class="headerlink" title="git合并"></a>git合并</h2><h3 id="git-marge-合并"><a href="#git-marge-合并" class="headerlink" title="git marge 合并"></a><span style='color:#4dd0e1'>git marge 合并</span></h3><blockquote><p>分支合并，将A分支合并到B分支</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 切换到A分支</span><br><span class="line">git checkout A</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 获取A分支最新代码</span><br><span class="line">git pull</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 切换到B分支</span><br><span class="line">git checkout B</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 获取B分支最新代码</span><br><span class="line">git pull</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 合并分支</span><br><span class="line">git marge A</span><br></pre></td></tr></table></figure><h3 id="合并指定的文件"><a href="#合并指定的文件" class="headerlink" title="合并指定的文件"></a><span style='color:#4dd0e1'>合并指定的文件</span></h3><blockquote><p>有时候想要合并A分支指定的文件或者文件夹到B分支上去，例如合并A分支的README.md文件到B分支上面。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 切换到A分支</span><br><span class="line">git checkout A</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 获取A分支最新代码</span><br><span class="line">git pull</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 切换到B分支</span><br><span class="line">git checkout B</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 获取B分支最新代码</span><br><span class="line">git pull</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 合并指定文件或者文件夹到分支</span><br><span class="line">git checkout B README.md </span><br><span class="line"></span><br></pre></td></tr></table></figure><p><span style='color:#f8b22f'>如果这里想要合并文件夹的话，比如src/views文件夹，可以将READMD.md换成文件夹src/views/**</span></p><h3 id="撤销commit、add"><a href="#撤销commit、add" class="headerlink" title="撤销commit、add"></a><span style='color:#4dd0e1'>撤销commit、add</span></h3><blockquote><p>如果合并错误，那么就先撤销commit，然后撤销add</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 撤销commit </span><br><span class="line">git reset --soft HEAD^</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 撤销add</span><br><span class="line">git reset HEAD</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 撤销指定的文件</span><br><span class="line">git reset HEAD src&#x2F;views&#x2F;README.md</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础知识 </tag>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基础知识 | JavaScript基础知识（二）</title>
       <link href="JavaScript-type/"/>
       <url>JavaScript-type/</url>
