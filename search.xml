@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>CSS | 我看谁还不用这个UI库</title>
+      <link href="tailwindcss/"/>
+      <url>tailwindcss/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src= "/img/loading.gif" data-lazy-src="https://s1.ax1x.com/2020/07/03/NjyaGV.jpg" alt="logo"></p><blockquote><p>最近新开不少项目，又实在是不想自己去定义特别多的 css 公共样式了，毕竟人多不好维护。于是找到了这个 tailwindcss UI 库。主要是内置了很多常用的 css 样式，前期避免了大量时间去写 css，中间开发也不用专门去维护，方便的一批。</p></blockquote><h3 id="文档地址"><a href="#文档地址" class="headerlink" title="文档地址"></a>文档地址</h3><blockquote><p>推荐看英文原文档，因为他是最新的版本，而中文文档只是 2.2.16 的，英文文档早已在 3.1.6 了。</p></blockquote><p><a href="https://www.tailwindcss.cn/docs">中文文档</a></p><p><a href="https://tailwindcss.com/">英文文档</a></p><h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><ul><li><p>在 vscode 中安装好<code>tailwindcss</code>的插件<span style='color:red'> （tailwind CSS IntelliSense）</span>，他会提示你所有的样式，配合这个开发，畅享丝滑。</p></li><li><p>安装<code>tailwindcss</code>，<a href="https://tailwindcss.com/docs/installation/using-postcss">点击这里可以去官网直接看安装流程</a>。</p></li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -D tailwindcss postcss autoprefixer</span><br></pre></td></tr></table></figure><ul><li>在项目中使用</li></ul><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.创建postcss.config.ts文件</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">&quot;tailwindcss&quot;</span>),</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">&quot;autoprefixer&quot;</span>),</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.创建tailwind.config.ts文件</span></span><br><span class="line"><span class="comment">/** <span class="doctag">@type <span class="type">&#123;import(&#x27;tailwindcss&#x27;).Config&#125;</span> </span>*/</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  content: [</span><br><span class="line">    <span class="string">&#x27;./public/**/*.html&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;./src/**/*.&#123;js,jsx,ts,tsx,vue&#125;&#x27;</span>,</span><br><span class="line">  ],</span><br><span class="line">  theme: &#123;</span><br><span class="line">    extend: &#123;&#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [],</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.在main.ts中引入样式</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;tailwindcss/tailwind.css&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4.修改vite.config.ts文件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (mode, command) =&gt; &#123;</span><br><span class="line">   <span class="keyword">return</span> defineConfig(&#123;</span><br><span class="line">      css: &#123;</span><br><span class="line">        postcss: &#123;</span><br><span class="line">          plugins: [</span><br><span class="line">            <span class="built_in">require</span>(<span class="string">&quot;tailwindcss&quot;</span>),</span><br><span class="line">            <span class="built_in">require</span>(<span class="string">&quot;autoprefixer&quot;</span>),</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5.使用,和正常的class一样的使用方法</span></span><br><span class="line">&lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&#x27;text-blue-400&#x27;</span>&gt;就是这样的用法啦&lt;/p&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>开发起来确实很顺畅，少写了很多很多的样式，除非是UI指定的样式需要写一些，其他的基本样式就没有怎么写过。减少了太多的css时间，更多的时间留在业务逻辑以及项目框架等上面去了。我看谁还不用这个tailwindcss！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+          <category> css </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+            <tag> tailwindcss </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript | 人脸识别并拍照</title>
       <link href="tracking/"/>
       <url>tracking/</url>
@@ -186,9 +215,9 @@
       
         <tags>
             
-            <tag> 切换主题 </tag>
-            
             <tag> vue3 </tag>
+            
+            <tag> 切换主题 </tag>
             
         </tags>
       
